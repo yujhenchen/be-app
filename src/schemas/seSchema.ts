@@ -56,7 +56,7 @@ const facetsSchema = z.object({
     end_categories: z.array(facetSchema),
 });
 
-export const responseSchema = z.object({
+export const seSchema = z.object({
     results: z.array(resultSchema),
     meta: metaSchema,
     facets: facetsSchema,
