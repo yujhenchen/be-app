@@ -9,6 +9,7 @@ export async function fetcher<T>(endpoint: string, config: RequestInit = {}, sch
         }
         return null;
     } catch (error) {
+        console.error(error)
         return null;
     }
 }
