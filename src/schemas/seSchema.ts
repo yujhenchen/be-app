@@ -1,7 +1,7 @@
 import { z } from "zod";
 
 const imageSchema = z.object({
-    alt_text: z.string(),
+    alt_text: z.string().nullable(),
     title: z.string(),
     file: z.string().url(),
     width: z.number(),
@@ -26,10 +26,10 @@ const resultSchema = z.object({
     image: imageSchema,
     live: z.boolean(),
     path: z.string(),
-    type: z.string(),
+    type: z.string().nullable(),
     original_title: z.string(),
     is_external: z.boolean(),
-    categories: z.string().nullable(),
+    categories: z.union([z.array(z.string()), z.string()]).nullable()
 });
 
 const metaSchema = z.object({
@@ -39,7 +39,7 @@ const metaSchema = z.object({
     previous_link: z.string().nullable(),
     next_link: z.string().nullable(),
     previous: z.string().nullable(),
-    next: z.string().nullable(),
+    next: z.union([z.string(), z.number()]).nullable(),
 });
 
 const facetSchema = z.object({
