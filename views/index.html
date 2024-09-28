@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="/htmx.js"></script>
+  </head>
+  <body>
+    <main>
+      <button
+        hx-get="https://www.visitfinland.com/.rest/delivery/product/slim/v1?offset=0&limit=3&languages%5Blike%5D=%25en%25&category=accommodation"
+        hx-target="#fi-data"
+        hx-swap="innerHTML"
+      >
+        Get
+      </button>
+      <div id="fi-data"></div>
+    </main>
+  </body>
+</html>
