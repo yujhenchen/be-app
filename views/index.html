@@ -8,14 +8,20 @@
   </head>
   <body>
     <main>
-      <button
-        hx-get="https://www.visitfinland.com/.rest/delivery/product/slim/v1?offset=0&limit=3&languages%5Blike%5D=%25en%25&category=accommodation"
-        hx-target="#fi-data"
-        hx-swap="innerHTML"
-      >
-        Get
+      <button hx-get="/api/se" hx-target="#se-data" hx-swap="innerHTML">
+        Get SE
+      </button>
+      <div id="se-data"></div>
+
+      <button hx-get="/api/fi" hx-target="#fi-data" hx-swap="innerHTML">
+        Get FI
       </button>
       <div id="fi-data"></div>
+
+      <button hx-get="/api/no" hx-target="#no-data" hx-swap="innerHTML">
+        Get NO
+      </button>
+      <div id="no-data"></div>
     </main>
   </body>
 </html>
