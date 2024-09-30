@@ -3,6 +3,7 @@ import config from "./src/config/config";
 import path from "path";
 import { fetcher } from "./fetcher";
 import { seSchema } from "./src/schemas/seSchema";
+import { getNOToken } from "./src/utils/util";
 
 const app = express();
 const port = 8080;
@@ -15,7 +16,12 @@ app.get("/", (req, res) => {
 app.get("/api/se", async (req, res) => {
 	const response = await fetcher("", {}, seSchema);
 	res.json(response?.results);
-})
+});
+
+app.get("/api/no-token", async (req, res) => {
+	const token = getNOToken();
+	res.json(token)
+});
 
 app.use(express.static(config.viewsPath))
 
