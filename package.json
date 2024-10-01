@@ -4,8 +4,9 @@
 	"type": "module",
 	"scripts": {
 		"start": "bun run index.ts",
-		"lint": "biome lint --write .",
-		"lint:fix": "biome check --write ."
+		"format": "bunx biome format --write src/**/*.ts",
+		"lint": "bunx biome lint --write src/**/*.ts",
+		"check": "bunx biome check --write src/**/*.ts"
 	},
 	"devDependencies": {
 		"@biomejs/biome": "1.9.3",
