@@ -23,14 +23,14 @@ const resultSchema = z.object({
 	seasons: z.string(),
 	"mgnl:lastActivated": z.string().transform((val) => {
 		const date = new Date(val);
-		if (isNaN(date.getTime())) {
+		if (Number.isNaN(date.getTime())) {
 			throw new Error("Invalid date");
 		}
 		return date;
 	}),
 	"mgnl:created": z.string().transform((val) => {
 		const date = new Date(val);
-		if (isNaN(date.getTime())) {
+		if (Number.isNaN(date.getTime())) {
 			throw new Error("Invalid date");
 		}
 		return date;
@@ -46,7 +46,7 @@ const resultSchema = z.object({
 	priceLow: z.string(),
 	"jcr:created": z.string().transform((val) => {
 		const date = new Date(val);
-		if (isNaN(date.getTime())) {
+		if (Number.isNaN(date.getTime())) {
 			throw new Error("Invalid date");
 		}
 		return date;
@@ -58,7 +58,7 @@ const resultSchema = z.object({
 	city: z.string(),
 	"mgnl:lastModified": z.string().transform((val) => {
 		const date = new Date(val);
-		if (isNaN(date.getTime())) {
+		if (Number.isNaN(date.getTime())) {
 			throw new Error("Invalid date");
 		}
 		return date;
